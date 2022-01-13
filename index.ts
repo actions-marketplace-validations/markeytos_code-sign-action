@@ -43,7 +43,6 @@ async function addCertificateToStore(){
             return false; 
         }
         var command = `certutil -f -p ${password} -importpfx ${certificateFileName}` 
-        console.log("Adding cert to store command: " + command); 
         const { stdout } = await asyncExec(command);
         console.log(stdout);
         return true;
